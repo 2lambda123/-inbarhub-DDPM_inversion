@@ -158,7 +158,7 @@ def get_replacement_mapper_(x: str, y: str, tokenizer, max_len=77):
     words_x = x.split(' ')
     words_y = y.split(' ')
     if len(words_x) != len(words_y):
-        raise ValueError(f"attention replacement edit can only be applied on prompts with the same length"
+        raise ValueError("attention replacement edit can only be applied on prompts with the same length"
                          f" but prompt A has {len(words_x)} words and prompt B has {len(words_y)} words.")
     inds_replace = [i for i in range(len(words_y)) if words_y[i] != words_x[i]]
     inds_source = [get_word_inds(x, i, tokenizer) for i in inds_replace]
